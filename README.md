@@ -11,15 +11,13 @@
 
 ## Bibliotecas Ultilizadas
 
-1. Remix Icon
-2. Animation css
+* Remix Icon
+* Animation css
 
 ## Uso
 
 Caso queira modificar algo no projeto Logo após clonar este repositório, instale todas as dependências do projeto rodando o comando ```npm install``` ou ```npm i```, para o Webpack ficar assistindo todas as suas alterações rode ```npm run build```.
 
-:::info
+> Os comandos sitados a cima deve ser utilizados em um `Terminal` linux ou algo similar, caso esteje ultilizando windows.
 
-Os comandos sitados a cima deve ser utilizados em um `Terminal` linux ou algo similar, caso esteje ultilizando windows.
 
-:::
