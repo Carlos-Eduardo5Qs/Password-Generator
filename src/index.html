@@ -9,8 +9,30 @@
 	<title>Gerador de senhas</title>
 </head>
 <body>
-	<section id="password-generator">
-		<h1>Gerador de senhas</h1>
+	<section id="password-generator">	
+
+		<h1>Precisando de uma senha? Experimente este gerador de senhas</h1>
+		<p>Gere senhas aleatórias e fortes para sua segurança online</p>
+
+		<div id="main-content">
+
+			<input id="password" type="text" placeholder="Sua senha será visivel neste campo" disabled>
+			
+				<h4>Quantos caracteres?</h4>
+				<input type="range" min="10" max="32" value="5" class="slider" id="myRange">
+  				<span id="demo"></span>
+
+			
+
+			 <button id="button-generator" class="btn">
+        		<svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+          		<polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+          		<polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+        		</svg>
+        		<span>Gerar senha</span>
+      		</button>
+		</div>
+
 	</section>
 	<script src="../public/bundle.js"></script>
 </body>

@@ -2,6 +2,81 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/modules/form-generates-password.js":
+/*!***************************************************!*\
+  !*** ./src/js/modules/form-generates-password.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _generator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./generator.js */ "./src/js/modules/generator.js");
+
+var display = document.getElementById('password');
+var amoutValue = document.getElementById('demo');
+var buttonGenerator = document.getElementById('button-generator');
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
+  var slider = document.getElementById("myRange");
+  var output = document.getElementById("demo");
+  output.innerHTML = slider.value;
+  slider.oninput = function () {
+    output.innerHTML = this.value;
+  };
+  buttonGenerator.addEventListener('click', function () {
+    eventClick();
+  });
+});
+function eventClick() {
+  display.value = (0,_generator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Number(amoutValue.innerText), true, true, true, true);
+}
+;
+
+/***/ }),
+
+/***/ "./src/js/modules/generator.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/generator.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ password)
+/* harmony export */ });
+var rand = function rand(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+};
+var upperCase = function upperCase() {
+  return String.fromCharCode(rand(65, 91));
+};
+var lowerCase = function lowerCase() {
+  return String.fromCharCode(rand(97, 123));
+};
+var numbers = function numbers() {
+  return String.fromCharCode(rand(48, 58));
+};
+var symbols = '~[y]{X}@4#$%¨2&*()_+=-;';
+var symbolsGenerator = function symbolsGenerator() {
+  return symbols[rand(0, symbols.length)];
+};
+function password(amount, uppercase, lowercase, number, symbol) {
+  var passwordArray = [];
+  amount = Number(amount);
+  for (var i = 0; i < amount; i++) {
+    uppercase && passwordArray.push(upperCase());
+    lowercase && passwordArray.push(lowerCase());
+    number && passwordArray.push(numbers());
+    symbol && passwordArray.push(symbolsGenerator());
+  }
+  ;
+  return passwordArray.join('').slice(0, amount);
+}
+;
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/css/style.css":
 /*!*****************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/css/style.css ***!
@@ -26,7 +101,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "*{\n\tmargin: 0;\n\tpadding: 0;\n\tbox-sizing:border-box;\n}\n\nbody {\n\tbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n\tbackground-size: cover;\n\tbackground-position: center center;\n\tbackground-repeat: no-repeat;\n}\n\n#password-generator {\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\tmin-height: 100vh;\n}\n\n", "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAAA;CACC,SAAS;CACT,UAAU;CACV,qBAAqB;AACtB;;AAEA;CACC,yDAAiD;CACjD,sBAAsB;CACtB,kCAAkC;CAClC,4BAA4B;AAC7B;;AAEA;CACC,aAAa;CACb,uBAAuB;CACvB,mBAAmB;CACnB,iBAAiB;AAClB","sourcesContent":["*{\n\tmargin: 0;\n\tpadding: 0;\n\tbox-sizing:border-box;\n}\n\nbody {\n\tbackground-image: url('../assets/background.jpg');\n\tbackground-size: cover;\n\tbackground-position: center center;\n\tbackground-repeat: no-repeat;\n}\n\n#password-generator {\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\tmin-height: 100vh;\n}\n\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "*{\n\tmargin: 0;\n\tpadding: 0;\n\tbox-sizing:border-box;\n\toutline: none;\n}\n\nhtml {\n\tfont-size: 62.5%;\n}\n\nbody {\n\tbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n\tbackground-size: cover;\n\tbackground-position: center center;\n\tbackground-repeat: no-repeat;\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\tmin-height: 100vh;\n\tfont-size: 2.4rem;\n}\n::placeholder {\n\tcolor: #fff;\n\tfont-size:1.5rem;\n}\n\n#password-generator {\n\ttext-align: center;\n\tcolor: #fff;\n\t\n}\n\n#main-content {\n\tdisplay: flex;\n\tjustify-content: center;\n\tflex-direction: column;\n\tgap: 1rem;\n\tmax-width: 400px;\n\tmargin: 5rem auto 0 auto;\n}\n\n#password {\n\tpadding: 0.5rem;\n\tbackground:transparent;\n\tborder-left: none;\n\tborder-top: none;\n\tborder-right: none;\n\tborder-bottom: 1px solid #71FFFF;\n\tcolor: #fff;\n\tfont-size: 2rem;\n}\n\nh4 {\n\tpadding-top:2rem;\n}\n\n#demo {\n\tpadding-bottom:2rem;\n}\n\n#button-generator {\n\tpadding: 0.5rem;\n\tfont-size: 1.8rem;\n}\n\n.btn {\n  width: 180px;\n  height: 60px;\n  cursor: pointer;\n  background: transparent;\n  border: 1px solid #91C9FF;\n  outline: none;\n  transition: 1s ease-in-out;\n  position: relative;\n  margin: 0 auto;\n}\n\nsvg {\n  position: absolute;\n  left: 0;\n  top: 0;\n  fill: none;\n  stroke: #fff;\n  stroke-dasharray: 150 480;\n  stroke-dashoffset: 150;\n  transition: 1s ease-in-out;\n}\n\n.btn:hover svg {\n  stroke-dashoffset: -480;\n}\n\n.btn span {\n  color: white;\n  font-size: 18px;\n  font-weight: 100;\n}\n\n@media (max-width: 1000px) {\n\thtml {\n\t\tfont-size: 50%;\n\t}\n\n\tp {\n\t\tpadding: 2rem 0;\n\t}\n}", "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAAA;CACC,SAAS;CACT,UAAU;CACV,qBAAqB;CACrB,aAAa;AACd;;AAEA;CACC,gBAAgB;AACjB;;AAEA;CACC,yDAAiD;CACjD,sBAAsB;CACtB,kCAAkC;CAClC,4BAA4B;CAC5B,aAAa;CACb,uBAAuB;CACvB,mBAAmB;CACnB,iBAAiB;CACjB,iBAAiB;AAClB;AACA;CACC,WAAW;CACX,gBAAgB;AACjB;;AAEA;CACC,kBAAkB;CAClB,WAAW;;AAEZ;;AAEA;CACC,aAAa;CACb,uBAAuB;CACvB,sBAAsB;CACtB,SAAS;CACT,gBAAgB;CAChB,wBAAwB;AACzB;;AAEA;CACC,eAAe;CACf,sBAAsB;CACtB,iBAAiB;CACjB,gBAAgB;CAChB,kBAAkB;CAClB,gCAAgC;CAChC,WAAW;CACX,eAAe;AAChB;;AAEA;CACC,gBAAgB;AACjB;;AAEA;CACC,mBAAmB;AACpB;;AAEA;CACC,eAAe;CACf,iBAAiB;AAClB;;AAEA;EACE,YAAY;EACZ,YAAY;EACZ,eAAe;EACf,uBAAuB;EACvB,yBAAyB;EACzB,aAAa;EACb,0BAA0B;EAC1B,kBAAkB;EAClB,cAAc;AAChB;;AAEA;EACE,kBAAkB;EAClB,OAAO;EACP,MAAM;EACN,UAAU;EACV,YAAY;EACZ,yBAAyB;EACzB,sBAAsB;EACtB,0BAA0B;AAC5B;;AAEA;EACE,uBAAuB;AACzB;;AAEA;EACE,YAAY;EACZ,eAAe;EACf,gBAAgB;AAClB;;AAEA;CACC;EACC,cAAc;CACf;;CAEA;EACC,eAAe;CAChB;AACD","sourcesContent":["*{\n\tmargin: 0;\n\tpadding: 0;\n\tbox-sizing:border-box;\n\toutline: none;\n}\n\nhtml {\n\tfont-size: 62.5%;\n}\n\nbody {\n\tbackground-image: url('../assets/background.jpg');\n\tbackground-size: cover;\n\tbackground-position: center center;\n\tbackground-repeat: no-repeat;\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\tmin-height: 100vh;\n\tfont-size: 2.4rem;\n}\n::placeholder {\n\tcolor: #fff;\n\tfont-size:1.5rem;\n}\n\n#password-generator {\n\ttext-align: center;\n\tcolor: #fff;\n\t\n}\n\n#main-content {\n\tdisplay: flex;\n\tjustify-content: center;\n\tflex-direction: column;\n\tgap: 1rem;\n\tmax-width: 400px;\n\tmargin: 5rem auto 0 auto;\n}\n\n#password {\n\tpadding: 0.5rem;\n\tbackground:transparent;\n\tborder-left: none;\n\tborder-top: none;\n\tborder-right: none;\n\tborder-bottom: 1px solid #71FFFF;\n\tcolor: #fff;\n\tfont-size: 2rem;\n}\n\nh4 {\n\tpadding-top:2rem;\n}\n\n#demo {\n\tpadding-bottom:2rem;\n}\n\n#button-generator {\n\tpadding: 0.5rem;\n\tfont-size: 1.8rem;\n}\n\n.btn {\n  width: 180px;\n  height: 60px;\n  cursor: pointer;\n  background: transparent;\n  border: 1px solid #91C9FF;\n  outline: none;\n  transition: 1s ease-in-out;\n  position: relative;\n  margin: 0 auto;\n}\n\nsvg {\n  position: absolute;\n  left: 0;\n  top: 0;\n  fill: none;\n  stroke: #fff;\n  stroke-dasharray: 150 480;\n  stroke-dashoffset: 150;\n  transition: 1s ease-in-out;\n}\n\n.btn:hover svg {\n  stroke-dashoffset: -480;\n}\n\n.btn span {\n  color: white;\n  font-size: 18px;\n  font-weight: 100;\n}\n\n@media (max-width: 1000px) {\n\thtml {\n\t\tfont-size: 50%;\n\t}\n\n\tp {\n\t\tpadding: 2rem 0;\n\t}\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -556,7 +631,7 @@ module.exports = styleTagTransform;
   \***********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "e095561628d8e515a406.jpg";
+module.exports = __webpack_require__.p + "1a1db07f6eeff71f67d1.jpg";
 
 /***/ })
 
@@ -701,9 +776,11 @@ var __webpack_exports__ = {};
   !*** ./src/js/main.js ***!
   \************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../css/style.css */ "./src/css/style.css");
+/* harmony import */ var _modules_form_generates_password_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/form-generates-password.js */ "./src/js/modules/form-generates-password.js");
+/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../css/style.css */ "./src/css/style.css");
 
-console.log('Webpack configurado corretamente...');
+
+(0,_modules_form_generates_password_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
 })();
 
 /******/ })()

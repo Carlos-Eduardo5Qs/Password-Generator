@@ -1,3 +1,5 @@
+import passwordGenerator from './modules/form-generates-password.js';
 import './../css/style.css';
 
-console.log('Webpack configurado corretamente...');
+passwordGenerator();
+

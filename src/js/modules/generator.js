@@ -3,7 +3,7 @@ const rand = (min,max) => Math.floor(Math.random() * (max - min) + min);
 const upperCase = () => String.fromCharCode(rand(65,91));
 const lowerCase = () => String.fromCharCode(rand(97,123));
 const numbers = () => String.fromCharCode(rand(48,58));
-const symbols = '~[]{}@#$%¨&*()_+=-;';
+const symbols = '~[y]{X}@4#$%¨2&*()_+=-;';
 const symbolsGenerator = () => symbols[rand(0,symbols.length)]; 
 
 export default function password(amount, uppercase, lowercase, number, symbol) {

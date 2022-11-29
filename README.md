@@ -12,7 +12,6 @@
 ## Bibliotecas Ultilizadas
 
 * Remix Icon
-* Animation css
 
 ## Uso
 
