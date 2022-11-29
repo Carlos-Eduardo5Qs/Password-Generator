@@ -2,7 +2,7 @@
 > Desenvolvido e escrito por [**Carlos Eduardo**](https://github.com/Carlos-Eduardo5Qs).
 > Este projeto foi desenvolvido para fins de estudos.
 
-Leve 3 dias para finalizar este projeto utilizando o metodo de programação modular separando o problema em partes, com isso eu melhorei minha organização mas eu ainda tenho muito o que evoluir com boas práticas de programação. eu também consegui configurar o Webpack com mais precisão, nos próximos projetos irei implementar algo novo em sua configuração deixando ele cada vez mais complexo.
+Levei 3 dias para finalizar este projeto utilizando o metodo de programação modular separando o problema em partes, com isso eu melhorei minha organização mas eu ainda tenho muito o que evoluir com boas práticas de programação. eu também consegui configurar o Webpack com mais precisão, nos próximos projetos irei implementar algo novo em sua configuração deixando ele cada vez mais complexo.
 
 ## Tecnologias ultilizadas
 
